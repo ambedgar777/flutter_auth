@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_auth/UI/auth/login_screen.dart';
+import 'package:flutter_auth/post/post_screen.dart';
 import 'package:flutter_auth/utils/utils.dart';
 import 'package:flutter_auth/widgets/round_button.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -40,10 +41,11 @@ class _SignupScreenState extends State<SignupScreen> {
       setState(() {
         loading = false;
       });
+      Navigator.push(context, MaterialPageRoute(builder: (context) => PostScreen()));
     }).onError((error, stackTrace) {
       Utils().toastMessage(error.toString());
       setState(() {
-        loading = true;
+        loading = false;
       });
     });
   }

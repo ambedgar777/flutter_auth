@@ -52,7 +52,7 @@ class _LoginScreenState extends State<LoginScreen> {
       debugPrint(error.toString());
       Utils().toastMessage(error.toString());
       setState(() {
-        loading = true;
+        loading = false;
       });
     });
   }
